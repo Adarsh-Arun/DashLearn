@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduDrop Dashboard</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+   <style>
+    /* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+  padding: 20px;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.week {
+  width: 2000%;
+  max-width: 1200px;
+}
+
+
+/* Text */
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+ h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+p {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #e0e3e6;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+  width: 101px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+.logout {
+  margin-block: auto;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  flex: 10;
+  padding: 1rem;
+}
+
+.top-cards {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.percentage,
+.streak {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  background-color: #000;
+  height: 100%;
+  width: 75%;
+}
+
+
+/* Button */
+.button {
+    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-shadow: #222;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+
+.main-content-bottom {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.graph-placeholder {
+  background-color: #d7e3fc;
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.resources {
+  flex: 1;
+}
+
+.resource-item {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resource-item p {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+
+/* Learning Process */
+.learning-progress {
+  flex: 2;
+}
+
+.learning-path {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0 15px;
+}
+
+.learning-path:last-child {
+  border-bottom: none;
+}
+
+
+/* analytics */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 100px;
+}
+
+.analytics-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow:  4px 9px rgba(180, 85, 85, 0.1);
+}
+
+.chart img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.risk-bar {
+  background-color: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.risk-level {
+  width: 20%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+/* Courses-1 */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.progress-container span {
+  font-size: 0.9em;
+  margin-right: 10px;
+  color: #333;
+}
+
+.progress-bar {
+  width: 70%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 10px;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: #333;
+}
+
+.progress-percent {
+  font-size: 0.9em;
+  color: #333;
+}
+
+.continue-button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.next-up, .recommended-practice {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.next-item, .practice-item {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Course-2*/ 
+.explore-button {
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  text-shadow: #222;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+
+
+.explore-button:hover {
+  background-color: #555;
+}
+
+
+
+/* List */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 0.9em;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Header*/
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #666;
+  background-color: #ffffff;
+  border-top: 1px solid #e9ecef;
+  margin-top: 20px;
+}
+
+.footer-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #666;
+}
+
+
+.button.primary {
+  background-color: #000;
+  color: #fff;
+}
+
+.button.primary:hover {
+  background-color: #333;
+}
+
+   </style>
+
+</head>
+
+
+<body>
+
+  
+  <!-- <p></p> -->
+  <div class="container">
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="header">
+        <img src="logo.png" class="logo">
+      </div>
+      <!-- <div class="logo">
+         EduDrop
+      </div> -->
+      <nav class="menu">
+        <a href="profile.html" class="menu-item">Profile</a>
+        <a href="course1.html" class="menu-item">Courses</a>
+        <a href="analytics.html" class="menu-item">Analytics</a>
+        <a href="#" class="menu-item">Schedule</a>
+        <a href="#" class="menu-item">Settings</a>
+      </nav>
+      <a href="login.html" class="logout">Sign out </a>
+    </aside>
+    
+
+    <!-- Main Content -->
+
+    
+    
+    <main class="main-content">
+      
+  <header class="header">
+    <a href="#" class="logo">
+      <span class="icon">🎓</span>
+      <span class="logo-text">DashLearn</span>
+    </a>
+    <nav class="nav-links">
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact..html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+      <h1> welcome back , Adarsh </h1>
+      <section class="top-cards">
+        <div class="card">
+          
+          
+          <h3>Current Course Progress</h3>
+          <p class="percentage">75%</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%;"></div>
+          </div>
+          <p class="progress-change">+2% from last week</p>
+        </div>
+
+        <div class="card">
+          <h3>Learning Streak</h3>
+          <p class="streak">14 days</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%;"></div>
+          </div>
+          <p class="streak-note">Keep it up! You're on fire!</p>
+        </div>
+
+        <div class="card">
+          <h3>Concept of the Day</h3>
+          <p class="concept">Neural Networks</p>
+          <p class="concept-description">Explore the basics of artificial neural networks</p>
+          <a href="course1.html" class="button">Start Learning</button></a>
+        </div>
+      </section>
+
+      <section class="main-content-bottom">
+        <div class="learning-progress card">
+          <h3>Learning Progress</h3>
+          <p>Your progress over the past 6 weeks</p>
+          <!-- Placeholder for progress graph -->
+          <div class="graph-placeholder">[Analysis goes here]</div>
+        </div>
+
+        <div class="resources card">
+          <h3>AI Resource Suggestions</h3>
+          <p>Personalized learning materials</p>
+          <div class="resource-item">
+            <p>Introduction to Machine Learning</p>
+            <p>Video course - 2 hours</p>
+            <button class="button">Watch Now</button>
+          </div>
+          <div class="resource-item">
+            <p>Python for Data Science</p>
+            <p>Interactive tutorial - 3 hours</p>
+            <button class="button">Start Tutorial</button>
+          </div>
+          
+        </div>
+      </section>
+      <footer>
+        <p>© 2025 DashLearn. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy</a>
+        </div>
+      </footer>
+      
+    </main>
+    
+  </div>
+  
+</body>
+</html>
