@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .analytics-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      
+      .subject-progress, .time-spent {
+        width: 48%;
+      }
+      
+      .subject-progress h2, .time-spent h2, .weekly-progress h2, .risk-assessment h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      .bar-chart {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .bar {
+        width: 20%;
+        background-color: #a59fe7;
+        text-align: center;
+        padding: 5px;
+        color: #fff;
+        border-radius: 4px 4px 0 0;
+        font-size: 14px;
+      }
+      
+      .time-spent .pie-chart {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        background: conic-gradient(#a59fe7 0% 25%, #c5c0f0 25% 50%, #dfdbf8 50% 75%, #f0effb 75% 100%);
+        border-radius: 50%;
+      }
+      
+      .weekly-progress {
+        margin-bottom: 20px;
+      }
+      
+      .line-chart {
+        height: 100px;
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+      }
+      
+      .line {
+        width: 16%;
+        background-color: #a59fe7;
+        border-radius: 2px;
+      }
+      
+      .risk-assessment {
+        padding: 10px;
+        background-color: #f9f9ff;
+        border: 1px solid #e0e0f8;
+        border-radius: 8px;
+      }
+      
+      .risk-bar {
+        width: 100%;
+        background-color: #e0e0f8;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      
+      .risk-level {
+        height: 8px;
+        background-color: #a59fe7;
+        border-radius: 4px;
+      }
+      
+      .key-factors, .recommendations {
+        margin-top: 10px;
+      }
+      
+      .key-factors h3, .recommendations h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        font-size: 14px;
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Performance Analytics</h1>
+
+    <div class="analytics-section">
+      <div class="subject-progress">
+        <h2>Subject Progress</h2>
+        <div class="bar-chart">
+          <div class="bar" style="height: 80%;">Math</div>
+          <div class="bar" style="height: 70%;">Science</div>
+          <div class="bar" style="height: 90%;">History</div>
+          <div class="bar" style="height: 60%;">Language</div>
+        </div>
+      </div>
+
+      <div class="time-spent">
+        <h2>Time Spent Distribution</h2>
+        <div class="pie-chart">
+          <!-- Placeholder for pie chart -->
+          <div class="slice" style="transform: rotate(0deg) translateX(25px) rotate(0deg);"></div>
+          <div class="slice" style="transform: rotate(90deg) translateX(25px) rotate(45deg);"></div>
+          <div class="slice" style="transform: rotate(180deg) translateX(25px) rotate(90deg);"></div>
+          <div class="slice" style="transform: rotate(270deg) translateX(25px) rotate(135deg);"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weekly-progress">
+      <h2>Weekly Progress</h2>
+      <div class="line-chart">
+        <!-- Placeholder for line chart -->
+        <div class="line" style="width: 16%; height: 20%;"></div>
+        <div class="line" style="width: 16%; height: 35%;"></div>
+        <div class="line" style="width: 16%; height: 50%;"></div>
+        <div class="line" style="width: 16%; height: 65%;"></div>
+        <div class="line" style="width: 16%; height: 80%;"></div>
+        <div class="line" style="width: 16%; height: 95%;"></div>
+      </div>
+    </div>
+
+    <div class="risk-assessment">
+      <h2>Dropout Risk Assessment</h2>
+      <div class="risk-bar">
+        <div class="risk-level" style="width: 20%;"></div>
+      </div>
+      <div class="key-factors">
+        <h3>Key Factors</h3>
+        <ul>
+          <li>Consistent attendance</li>
+          <li>Good assignment completion rate</li>
+          <li>Active participation in discussions</li>
+          <li>Regular use of learning resources</li>
+        </ul>
+      </div>
+      <div class="recommendations">
+        <h3>Recommendations</h3>
+        <ul>
+          <li>Continue maintaining your current study habits</li>
+          <li>Consider joining a study group for additional support</li>
+          <li>Explore advanced topics in your areas of strength</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
