@@ -1,0 +1,323 @@
+
+<html>
+<head>
+
+
+ <title>Features</title>
+
+
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    
+
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #000;
+      background-color: #e0e3e6;
+      border: 1px solid #e0e3e6;
+      border-radius: 5px;
+    }
+
+    .section-title{
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #fd3535;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+        /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      padding: 2rem;
+      max-width: 1200px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 10px;
+    
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+      
+    }
+    
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+    }
+    
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+    
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .nav-link:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+    
+    /* Main Content */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    /* Left Section */
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .main-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .main-description {
+      font-size: 1.125rem;
+      color: #666;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .button {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .button.primary {
+      background-color: #000;
+      color: #fff;
+    }
+    
+    .button.secondary {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+    }
+    
+    .button.primary:hover {
+      background-color: #333;
+    }
+    
+    .button.secondary:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .arrow {
+      margin-left: 0.5rem;
+    }
+    
+    /* Right Section (Login Form) */
+    .right-section {
+      background-color: #e0e3e6;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    
+    .login-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .login-description {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    
+    .login-form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .login-form label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .login-form input {
+      padding: 0.75rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #9a0909;
+      border-radius: 5px;
+    }
+    
+    .full-width {
+      width: 100%;
+    }
+    
+    .button.full-width {
+      font-weight: bold;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo {
+      width: 50px; /* Adjust width */
+      height: auto; /* Maintain aspect ratio */
+    }
+    
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #ffffff;
+      border-top: 1px solid #e9ecef;
+      margin-top: 20px;
+    }
+    
+    .footer-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #666;
+    }
+    
+    
+ </style>
+
+ 
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <a href="#" class="logo">
+            <span class="icon">🎓</span>
+            <span class="logo-text">DashLearn</span>
+          </a>
+          <nav class="nav-links">
+            <a href="features.html" class="nav-link">Features</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact..html" class="nav-link">Contact</a>
+            <a href="login.html" class="nav-link">Login </a>
+          </nav>
+        </header>
+
+
+  <form>
+    <h1>DashLearn</h1>
+ 
+    <p>Website | Personalized Learning Tools </p>
+ <br>
+ <br>
+
+ <div class="section-title">Features: </div>
+ 
+ 
+ 
+<ul>
+ <li><p class="item">Improved Processing & Operations</p></li>
+   <li><p class="item">User-Friendly Layout</p></li>
+   <li><p class="item">Engaging Aesthetics</p></li>
+   <li><p class="item">Easy Navigation</p></li>
+   <li><p class="item">Pleasing Visual Aesthetic</p></li>
+   <li><p class="item">Smooth and Simple Workflow</p></li>
+   <li><p class="item">Badge + Reward & Team Study</p></li>
+   </ul>
+<br>
+<br>
+<br>
+<br>
+
+
+
+</form>
+
+<footer>
+    <p>© 2025 DashLearn. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
