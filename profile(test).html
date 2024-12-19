@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+    
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+    
+    .student-profile {
+        display: flex;
+        justify-content: space-between;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 900px;
+        margin-bottom: 20px;
+    }
+    
+    .personal-details, .academic-progress {
+        width: 45%;
+    }
+    
+    .personal-details {
+        text-align: center;
+    }
+    
+    .avatar {
+        background-color: #e0e0e0;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333333;
+    }
+    
+    p {
+        font-size: 0.9rem;
+        color: #555555;
+        margin: 5px 0;
+    }
+    
+    .academic-progress h2 {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    .progress-item {
+        margin-bottom: 15px;
+    }
+    
+    .progress-item span {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        color: #333333;
+    }
+    
+    .progress-bar {
+        background-color: #e0e0e0;
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .progress-bar div {
+        background-color: #4CAF50;
+        height: 100%;
+        transition: width 0.3s ease;
+    }
+    
+    .details-form {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 900px;
+    }
+    
+    .details-form h2 {
+        font-size: 1.5rem;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+    
+    .details-form p {
+        font-size: 0.9rem;
+        color: #555555;
+        margin-bottom: 20px;
+    }
+    
+    .form-row {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    label {
+        font-size: 0.9rem;
+        color: #333333;
+        margin-bottom: 5px;
+    }
+    
+    input, textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        color: #333333;
+        width: 100%;
+    }
+    
+    textarea {
+        resize: none;
+    }
+    
+    button {
+        padding: 10px 15px;
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    
+    button:hover {
+        background-color: #4CAF50;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="student-profile">
+            <div class="personal-details">
+                <div class="avatar"></div>
+                <h2>Alex Johnson</h2>
+                <p>10th Standard</p>
+                <p><strong>Email:</strong> alex.johnson@example.com</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Address:</strong> 123 Education St, Knowledge City, IN 400001</p>
+                <p><strong>School:</strong> Bright Future High School</p>
+            </div>
+            <div class="academic-progress">
+                <h2>Academic Progress</h2>
+                <div class="progress-item">
+                    <span>Overall Progress</span>
+                    <div class="progress-bar"><div style="width: 75%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <span>Mathematics</span>
+                    <div class="progress-bar"><div style="width: 80%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <span>Science</span>
+                    <div class="progress-bar"><div style="width: 75%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <span>English</span>
+                    <div class="progress-bar"><div style="width: 85%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <span>Social Studies</span>
+                    <div class="progress-bar"><div style="width: 70%;"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="details-form">
+            <h2>Personal Details</h2>
+            <p>Update your personal information</p>
+            <form>
+                <div class="form-row">
+                    <label>Full Name</label>
+                    <input type="text" value="Alex Johnson">
+                </div>
+                <div class="form-row">
+                    <label>Email</label>
+                    <input type="email" value="alex.johnson@example.com">
+                </div>
+                <div class="form-row">
+                    <label>Phone</label>
+                    <input type="text" value="+91 98765 43210">
+                </div>
+                <div class="form-row">
+                    <label>Address</label>
+                    <textarea>123 Education St, Knowledge City, IN 400001</textarea>
+                </div>
+                <button type="submit">Edit Profile</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
