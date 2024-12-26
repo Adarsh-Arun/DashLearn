@@ -1,0 +1,111 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts'
+
+// Mock data - replace with real data in production
+const dropoutByGender = [
+  { name: 'Male', dropoutRate: 16 },
+  { name: 'Female', dropoutRate: 14 },
+  { name: 'Other', dropoutRate: 15 },
+]
+
+const dropoutByArea = [
+  { name: 'Urban', dropoutRate: 12 },
+  { name: 'Semi-Urban', dropoutRate: 15 },
+  { name: 'Rural', dropoutRate: 18 },
+]
+
+const dropoutByCaste = [
+  { name: 'General', dropoutRate: 10 },
+  { name: 'OBC', dropoutRate: 15 },
+  { name: 'SC', dropoutRate: 18 },
+  { name: 'ST', dropoutRate: 20 },
+]
+
+const dropoutByStandard = [
+  { name: '5th', dropoutRate: 5 },
+  { name: '6th', dropoutRate: 7 },
+  { name: '7th', dropoutRate: 10 },
+  { name: '8th', dropoutRate: 12 },
+  { name: '9th', dropoutRate: 15 },
+  { name: '10th', dropoutRate: 18 },
+]
+
+export default function DropoutInsights() {
+  return (
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Detailed Dropout Analysis</CardTitle>
+          <CardDescription>Segmented by various demographic factors</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Tabs defaultValue="gender" className="space-y-4">
+            <TabsList>
+              <TabsTrigger value="gender">Gender</TabsTrigger>
+              <TabsTrigger value="area">Area</TabsTrigger>
+              <TabsTrigger value="caste">Caste</TabsTrigger>
+              <TabsTrigger value="standard">Standard/Age</TabsTrigger>
+            </TabsList>
+            <TabsContent value="gender">
+              <DropoutChart data={dropoutByGender} title="Dropout Rate by Gender" />
+            </TabsContent>
+            <TabsContent value="area">
+              <DropoutChart data={dropoutByArea} title="Dropout Rate by Area" />
+            </TabsContent>
+            <TabsContent value="caste">
+              <DropoutChart data={dropoutByCaste} title="Dropout Rate by Caste" />
+            </TabsContent>
+            <TabsContent value="standard">
+              <DropoutChart data={dropoutByStandard} title="Dropout Rate by Standard" chartType="line" />
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>ML-Derived Insights</CardTitle>
+          <CardDescription>Key factors contributing to dropout risk</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2">
+            <li>1. Consistent absenteeism (correlated with 75% of dropouts)</li>
+            <li>2. Low performance in core subjects (present in 68% of dropout cases)</li>
+            <li>3. Lack of extracurricular engagement (observed in 62% of dropouts)</li>
+            <li>4. Socioeconomic factors (influential in 58% of cases)</li>
+            <li>5. Distance from school (significant for 45% of rural dropouts)</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
+function DropoutChart({ data, title, chartType = 'bar' }) {
+  return (
+    <div className="h-[300px]">
+      <h3 className="text-lg font-medium mb-2">{title}</h3>
+      <ResponsiveContainer width="100%" height="100%">
+        {chartType === 'bar' ? (
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="dropoutRate" fill="#8884d8" />
+          </BarChart>
+        ) : (
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="dropoutRate" stroke="#8884d8" />
+          </LineChart>
+        )}
+      </ResponsiveContainer>
+    </div>
+  )
+}
